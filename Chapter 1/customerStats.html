@@ -1,0 +1,29 @@
+<html>
+    <body>
+        <script>
+            // Program name : customerStats.html
+            // Purpose : Compute total and average customers over 4 hours
+            // Author : Vedant
+            // Date : 27/02/2023
+            
+            // Variables
+            var totalCust ;
+            var avgCust ; 
+            var c1 , c2 , c3 , c4 ;
+            var NUM_HOURS = 4 ;
+            var BR = "<br/>"
+            var ES = ""
+
+            c1 = parseInt(prompt("Enter number pf customers of 1 hour : ",ES));
+            c2 = parseInt(prompt("Enter number pf customers of 2 hour : ",ES));
+            c3 = parseInt(prompt("Enter number pf customers of 3 hour : ",ES));
+            c4 = parseInt(prompt("Enter number pf customers of 4 hour : ",ES));
+
+            totalCust = c1 + c2 + c3 + c4;
+            avgCust = Math.floor(totalCust / NUM_HOURS) ; 
+
+            document.write("Total number of Customers : " + totalCust + BR);
+            document.write("Average number of customers : " ,  avgCust + BR)
+        </script>
+    </body>
+</html>

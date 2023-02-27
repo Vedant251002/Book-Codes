@@ -1,0 +1,40 @@
+<html>
+    <body>
+        <script>
+
+            var firstName = prompt("Enter Firstname : ")
+            var lastName = prompt("Enter Last name : ")
+            var workedHours = parseFloat(prompt("Enter number of hours you worked : "))
+            var hourlyRate = parseFloat(prompt("Enter wage rate of hour : "))
+            
+            var FEDERAL_TAX = 0.15
+            var STATE_TAX = 0.034
+            var COUNTY_TAX = 0.011
+
+            var grossPay = workedHours * hourlyRate;
+
+            var fedTax = (grossPay * FEDERAL_TAX).toFixed(2);
+            var stateTax = (grossPay * STATE_TAX).toFixed(2);
+            var countyTax = (grossPay * COUNTY_TAX).toFixed(2);
+
+            var medIns = parseFloat(prompt("Enter medical deduction : "))
+            
+            var totDed = (+medIns + +fedTax + +stateTax + +countyTax).toFixed(2);
+            
+            var netpay = grossPay - totDed;
+
+            document.write("Payroll information for : " + firstName + " " + lastName + "<br>");
+
+            document.write("Hours that you worked : " + workedHours+ "<br>");
+            document.write("Hourly Rate : " + hourlyRate + "<br>");
+            document.write("Gross pay : " + grossPay + "<br>")
+            document.write("Fedral income tax : " + fedTax + "<br>")
+            document.write("State income tax : " + stateTax + "<br>")
+            document.write("County income tax : " + countyTax + "<br>")
+            document.write("Medical Insurance : " + medIns + "<br>")
+            document.write("Total Deduction : " + totDed + "<br>") 
+            document.write("Net pay : " + netpay + "<br>") 
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+    <body>
+        <script>
+            // Program Name : textToNumbers.html
+            // Purpose : Convert text input into numbers and add them 
+            // Author : Vedant
+            // Date : 27/02/2023
+
+            // declare variables 
+            var num1,num2;   // input numbers
+            var sum;        //sum of to inputs
+            var BR = "<br/>";   // html break tag
+            var ES = "";
+
+            // welcome the user
+            document.write("Welcome" + BR);
+            document.write("This program converts text to numbers,");
+            document.write(" adds them and display the sum." + BR);
+
+            //Prompt numbers from  user
+            num1 = parseInt(prompt("Enter 1st number : ",ES))
+            num2 = parseInt(prompt("Enter 2nd number : " , ES))
+
+            //  Add numbers
+            sum = num1 + num2 ;
+            document.write("Sum of two number is : " + sum + BR);
+
+
+        </script>
+    </body>
+</html>
