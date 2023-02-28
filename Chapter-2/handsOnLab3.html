@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let rent = parseFloat(prompt("Enter Rent Payment : "));
+      let food = parseFloat(prompt("Enter Food Payment : "));
+      let utilities = parseFloat(prompt("Enter Utilities Payment : "));
+      let others = parseFloat(prompt("Enter Other Payments : "));
+
+      let total = rent + food + utilities + others;
+      document.write("your total expenses : $" + total.toFixed(2) + "<br/>");
+
+      let data = {rent , food, utilities, others};
+
+      for (let i in data) {
+        let per = (data[i] / total ) * 100;
+        document.write("percentage of " + i  + ": " + per.toFixed(1)  + "% <br/>");
+      }
+    </script>
+  </body>
+</html>

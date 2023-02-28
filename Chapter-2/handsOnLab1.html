@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let jan2010 = parseFloat(prompt("Enter price of 2010"));
+        let jan2011 = parseFloat(prompt("Enter price of 2011"));
+
+        let diff = jan2011-jan2010
+        let percentage = ( diff / jan2010 ) * 100 ;
+        if(diff>=0){
+            document.write("price increased from 2010 by : " + percentage + "%")
+        }else{
+            document.write("price decreased from 2010 by : " + percentage + "%")
+        }
+    </script>
+</body>
+</html>
