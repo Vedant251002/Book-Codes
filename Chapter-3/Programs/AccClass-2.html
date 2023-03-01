@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function Account(type, num , lname ,fname , bal){
+            this.accType = type;
+            this.accNumber = num;
+            this.lastName = lname;
+            this.firstName = fname;
+            this.accBal = bal;
+            this.deposit = deposit;
+            this.withdraw = withdraw;
+            this.changename = changename;
+            this.inquire = inquire;
+        }
+
+        function deposit(amt){
+            this.accBal += amt;
+            document.write("New account balance : " + this.accBal + "<br/>") 
+        }
+
+        function withdraw(amt){
+            this.accBal -= amt;
+            document.write("New account balance : " + this.accBal + "<br/>") 
+        }
+
+        function changename(lname,fname){
+            this.lastName = lname
+            this.firstName = fname
+            document.write("New Name : " + this.firstName + " " + this.lastName + "<br/>")
+        }
+
+        function inquire(){
+            document.write("Balance : " + this.accBal + "<br/>")
+        }
+
+
+    </script>
+</head>
+<body>
+    <script>
+        document.write("this program creates an account" + "<br/>")
+
+        // creates an account object
+        var mySavingAcc = new Account("S" , 2649615 , "Pandya" , "Vedant" , 20000);
+        
+        mySavingAcc.deposit(50)
+        mySavingAcc.withdraw(10)
+        mySavingAcc.changename("asdf","sdfg")
+        mySavingAcc.inquire();
+        
+        document.write("Thank you")
+
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,74 @@
+Class Account
+
+    //Declare variables
+    String accType
+    Numeric accNumber
+    String lastName
+    String firstName
+    Numeric accBal
+
+Constructor Method Account(String type, Numeric num ,String lname , String fname , Numeric bal)
+    accType = type
+    accNumber = num
+    lastName = lname
+    firstName = fname
+    accBal = bal
+
+End Method
+    //Method to add amount in account
+    Method deposit(numeric amt)
+        accBal += amt
+        Display "The new Balance is : " + accBal
+    End Method
+
+    // Method to withdraw amount 
+    Method withdraw(Numeric amt)
+    accBal -= amt
+        Display "The new Balance is : " + accBal
+        End Method
+
+        //Method to change lastName
+        Method changename(String fname , String lname)
+        lastName = lname
+        firstName = fname
+        Display "The name has been changed to : " + firstName " " + lastName
+        End Method
+
+        Method inquire()
+        return accBal
+        End Method
+
+        Method displayInfo()
+        Display "Account : " + accNumber
+        Display "Account type : " + accType
+        Display "Owner Name : " firstName + " " + lastName
+        Display "Current Balance : " + accBal
+        End Method
+         
+
+End Class
+
+Start
+
+    Display "Account Program."
+    Display "this program create an account"
+    Display "It also modifies the account"
+
+
+    // Create and account object
+    Account mySavingAcc = new Account( "S" , 1544984 , "vedant" , "pandya" , 1000)
+    
+    //Deposit $40
+    mySavingAcc.deposit(40)
+    
+    //Withdraw $50
+    mySavingAcc.withdraw(50)
+
+    //Inquire
+    mySavingAcc.inquire()
+
+    //Display account info 
+    mySavingAcc.displayInfo()
+    Stop
+
+    

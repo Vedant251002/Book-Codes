@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write("In this program, we will see few math in-built functions! " + "<br/>")
+
+        let input1 = parseFloat(prompt("Enter a value : " ) );
+
+        document.write("Square root : " + Math.sqrt(input1).toFixed(2) + "<br/>")
+        document.write( "Absolute : " + Math.abs(input1) + "<br/>")
+        document.write( "Next Highest : " + Math.ceil(input1) + "<br/>")
+        document.write( "Next Lowest : " + Math.floor(input1) + "<br/>")
+
+        let input2 = parseFloat(prompt("Enter another value ; ") + "<br/>")
+
+        document.write( "Higher Of Two : " + Math.max(input1,input2) + "<br/>")
+        document.write( "LOwer Of Two : " + Math.min(input1,input2) + "<br/>")
+    </script>
+</body>
+</html>

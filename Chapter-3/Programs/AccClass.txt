@@ -1,0 +1,30 @@
+Class Account
+
+    //Declare variables
+    String accType
+    Numeric accNumber
+    String lastName
+    String firstName
+    Numeric accBal
+
+Constructor Method Account(String type, Numeric num ,String lname , String fname , Numeric bal)
+    accType = type
+    accNumber = num
+    lastName = lname
+    firstName = fname
+    accBal = bal
+
+End Method
+
+End Class
+
+Start
+
+    Display "Account Program."
+    Display "this program create an account"
+
+    // Create and account object
+    Account mySavingAcc = new Account( "S" , 1544984 , "vedant" , "pandya" , 1000)
+
+    Stop
+    

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor="white">
+    <form name="ColorAndText" action="">
+        <input type="radio" name="colors" value="Azure" onclick="setColor(this.value)" />Azure<br>
+        <input type="radio" name="colors" value="Yellow" onclick="setColor(this.value)" />Yellow<br>
+        <input type="radio" name="colors" value="chocolate" onclick="setColor(this.value)" /> Chocolate<br>
+        <input type="button" name="change colors" value="change color" onclick="changeColor()"/> <br/>
+
+        <input type="text" name="firstname" placeholder="First Name" size="40" /> <br/>
+        <input type="text" name="lastname" placeholder="Last Name" size="40" /> <br/>
+        <input type="text" name="fullname" readonly="true" size="40"/><br/>
+        <input type="button" name="change name" value="Display Name" onclick="displayName()">
+
+    </form>
+    <script>
+        let nextColor ;
+        function setColor(color){
+            nextColor = color;
+        }
+        function changeColor(e){
+            document.body.bgColor = nextColor;
+        }
+
+        function displayName(){
+            let fname = document.ColorAndText.firstname.value
+            let lname = document.ColorAndText.lastname.value
+            document.ColorAndText.fullname.value = fname + " " + lname
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      function Television(brand, screenSize, price) {
+        this.brand = brand;
+        this.screenSize = screenSize;
+        this.price = price;
+        this.dislplayInfo = dislplayInfo;
+        this.setPrice = setPrice;
+      }
+
+      function setPrice(newPrice) {
+        this.price = newPrice;
+      }
+      function dislplayInfo() {
+        document.write(
+          "You chose this brand " +
+            this.brand +
+            " and screen size is " +
+            this.screenSize +
+            " and you have to pay $" +
+            this.price +
+            " for this. <br/>"
+        );
+      }
+    </script>
+  </head>
+  <body>
+    <script>
+      let myTv = new Television("Sony", 52, 12999);
+      myTv.dislplayInfo();
+      myTv.setPrice(999);
+      myTv.dislplayInfo();
+    </script>
+  </body>
+</html>
