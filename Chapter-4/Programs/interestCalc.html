@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let balance = parseFloat(prompt("Enter your account balance : "));
+      let intRate = parseFloat(prompt("Enter your interest rate : "));
+
+      let interest = intRate * balance;
+      balance += interest;
+      document.write("Your New Balance is : " + balance);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function MenuItems(name , category , price){
+            this.name = name;
+            this.category = category;
+            this.price = price;
+            this.displayInfo = displayInfo;
+        }
+        function displayInfo(){
+            let display = `Item Name : ${this.name} <br/>
+                            Category : ${this.category} <br/>
+                            Price : ${this.price}<br/><br/><br/>`
+            document.write(display)
+        }
+    </script>
+</head>
+<body>
+    <script>
+        let item1 = new MenuItems("Pastrami" , "Sandwich" , 4.95);
+        item1.displayInfo();
+        let item2 = new MenuItems("Ham" , "Sandwich" , 5.25);
+        item2.displayInfo();
+        let item3 = new MenuItems("Milk Shake" , "Drink" , 2.95);
+        item3.displayInfo();
+        let item4 = new MenuItems("Soft Drink" , "Drink" , 1.49);
+        item4.displayInfo();
+    </script>
+    
+</body>
+</html>
