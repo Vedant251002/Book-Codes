@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label>Enter Your Name : </label><input type="text" id="name" /><br />
+    <label>Enter Your Email-Address : </label
+    ><input type="email" id="mail" /><br />
+    <label>Enter How Many Buttons You Want : </label
+    ><input type="number" id="quantity" /><br />
+    <input type="button" value="submit" onclick="Info()" /><br />
+    <p id="display"></p>
+    <script>
+      let price = 0.99;
+      let salesTax = 0.06;
+      let shippingCharge = 2.0;
+      let totalPrice;
+      function Info() {
+        let name = document.getElementById("name").value;
+        let mail = document.getElementById("mail").value;
+        let quantity = document.getElementById("quantity").value;
+
+        totalPrice = salesTax + shippingCharge + price * quantity;
+        document.getElementById("display").innerHTML += 
+                `Name : ${name}<br/>
+                Mail-Id : ${mail}<br/>
+                Quantity of buttons : ${quantity}<br/>
+                Sales Tax : ${salesTax}<br/>
+                Order Total : ${totalPrice}<br/><br/><br/>`;
+      }
+    </script>
+  </body>
+</html>
