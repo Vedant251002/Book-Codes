@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fname = prompt("Enter first name : ")
+        let lname = prompt("Enter last name : ")
+        let pkgQuantity = parseInt(prompt("Enter number of packages you want : ")) 
+        let shpaAdress = prompt("Enter shipping address : ")
+        let pkgPrice , shpCharge;
+        if (pkgQuantity >=6){
+            pkgPrice = 2.00
+        }else{
+            pkgPrice = 2.50
+        }
+
+        if(shpaAdress == "ID"){
+            shpCharge = 0.00
+        }else{
+            shpCharge = 4.00
+        }
+
+        let totalpkgCost = pkgQuantity * pkgPrice;
+        let totalOrderCost = totalpkgCost + shpCharge;
+
+        document.write("User : " + fname + " " + lname  + " <br/>")
+        document.write("Number of pkgs you ordered : " + pkgQuantity + "<br/>")
+        document.write("SubTotal : " + totalpkgCost + "<br/>")
+        document.write("Order will be ship :" + shpaAdress + "<br/>")
+        document.write("Shipping cost : " + shpCharge + "<br/>")
+        document.write("Order total : " + totalOrderCost)
+    </script>
+</body>
+</html>

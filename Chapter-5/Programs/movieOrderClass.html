@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+        let moviePrice , movie;
+        function MovieOrder(movieNum , deliveryType){
+            this.movieNum = movieNum;
+            this.deliveryType = deliveryType;
+            this.displayInfo = displayInfo;
+            if(this.deliveryType == "S" || this.deliveryType == "s"){
+                moviePrice = 3.99
+            }else{
+                moviePrice = 4.99
+            }
+        }
+        
+        function displayInfo(){
+            switch(this.movieNum){
+                case 1:
+                    movie = "STAR WARS";
+                    break;
+                case 2:
+                    movie = "E.T."
+                    break;
+                case 3:
+                    movie = "RAIDERS OF THE LOST PARK"
+                    break;
+                default:
+                    alert("you inserted invalid movie number")
+                    break;
+            }
+            document.write("Movie Name : " + movie  + "<br/>")
+            document.write("Price : " + moviePrice + "<br/>")
+        }
+    </script>
+  </head>
+  <body>
+    <script>
+        let movieNumber = parseInt(prompt("Enter 1 to order STAR WARS,  2 for E.T.   , 3 for RAIDERS OF THE LOST PARK "));
+        let delType = prompt("Enter S to stream or D to download ");
+
+        let myMovie = new MovieOrder( movieNumber , delType)
+        myMovie.displayInfo();
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let workedHours = parseFloat(prompt("Enter how many hours you worked : "))
+        let wageRate = parseFloat(prompt("Enter how much wage rate is : "))
+        let grossPay;
+        if(workedHours > 40 ){
+            let overtimeHours = workedHours - 40;
+            let overtimePay = overtimeHours * wageRate * 1.5 ;
+            grossPay = overtimePay + ( 40 * wageRate);
+
+        }else{
+            grossPay = workedHours * wageRate;
+        }
+        document.write("Gross pay : " + grossPay)
+    </script>
+</body>
+</html>
