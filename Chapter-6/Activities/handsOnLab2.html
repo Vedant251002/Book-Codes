@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="display"></p>
+    <script>
+      let totalQuantity = {
+        latte: 0,
+        cappuccino: 0,
+        espresso: 0,
+        black: 0,
+      };
+
+      let input = prompt(
+        "press 'l' for latte, 'c' for cappuccino , 'e' for espresso , 'b' for black and if you want to quit press 'q' :"
+      );
+      while (input != "q") {
+        let qty = parseInt(prompt("enter quantity of this category : "));
+        switch (input) {
+          case "l":
+            totalQuantity.latte += qty;
+            break;
+          case "c":
+            totalQuantity.cappuccino += qty;
+            break;
+          case "e":
+            totalQuantity.espresso += qty;
+            break;
+          case "b":
+            totalQuantity.black += qty;
+            break;
+          default:
+            alert("please enter valid expression!");
+            break;
+        }
+        input = prompt(
+          "press 'l' for latte, 'c' for cappuccino , 'e' for espresso , 'b' for black and if you want to quit press 'q' :"
+        );
+      }
+      let data = ""
+      for(let key in totalQuantity){
+        data += key + " :" + totalQuantity[key] + "<br/>"
+      }
+      document.getElementById("display").innerHTML = data
+    </script>
+  </body>
+</html>

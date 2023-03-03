@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let BR = "<br/>";
+      class Customer {
+        constructor(lname, fname, address, city, State, zip) {
+          this.custLname = lname;
+          this.custFname = fname;
+          this.custAddress = address;
+          this.custCity = city;
+          this.custState = State;
+          this.custZip = zip;
+        }
+        displayInfo() {
+          document.write(
+            "Name : " + this.custLname + " " + this.custFname + BR
+          );
+          document.write("Address : " + this.custAddress + BR);
+          document.write("City : " + this.custCity + BR);
+          document.write("State : " + this.custState + BR);
+          document.write("Zip : " + this.custZip + BR + BR + BR);
+        }
+      }
+
+      let lname = prompt("Enter last name or press q to quit : ");
+
+      while (lname != "q") {
+        let fname = prompt("Enter first name : ");
+        let add = prompt("enter address : ");
+        let city = prompt("enter city name : ");
+        let State = prompt("enter state name : ");
+        let zip = prompt("enter zip : ");
+
+        let array = [
+          {
+            lname,
+            fname,
+            add,
+            city,
+            State,
+            zip,
+          },
+        ];
+
+        for (let obj of array) {
+          let info = new Customer(
+            obj.lname,
+            obj.fname,
+            obj.add,
+            obj.city,
+            obj.State,
+            obj.zip
+          );
+          info.displayInfo();
+        }
+        lname = prompt("Enter last name or press q to quit : ");
+      }
+    </script>
+  </body>
+</html>
