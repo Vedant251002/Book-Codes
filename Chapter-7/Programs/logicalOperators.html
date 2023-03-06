@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num1 = parseFloat(prompt("Enter 1st number : "))
+        let num2 = parseFloat(prompt("Enter 2nd number : "))
+
+        if( num1 > 100 && num2 >100){
+            document.write("Both number is greater than 100")
+        }else if( num1 > 100 || num2 > 100){
+            document.write("Atleast one number is greater than 100")
+        }
+        else if( !(num1 > 100 || num2 > 100 )){
+            document.write("neither of number is greater than 100")
+        }else{
+            document.write("enter valid number")
+        }
+    </script>
+</body>
+</html>

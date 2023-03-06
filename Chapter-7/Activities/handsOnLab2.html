@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let percentage = parseFloat(prompt("Enter percentage : "))
+        let absence = parseInt(prompt("Enter number of absence in class :"))
+
+        let finalPercentage = 0;
+        if( absence > 5 ){
+            finalPercentage = 59
+        }else if(absence >= 0 && absence <=2 ){
+            finalPercentage = percentage + 3
+        }else{
+            finalPercentage = percentage
+        }
+
+        let result = ""
+        if( finalPercentage >= 90 && finalPercentage <= 100){
+            result = "A"
+        }else if( finalPercentage >=80 && finalPercentage <=89.9){
+            result = "B"
+        }else if( finalPercentage >=70 && finalPercentage <=79.9){
+            result = "C"
+        }else if( finalPercentage >=60 && finalPercentage <=69.9){
+            result = "D"
+        }else{
+            result = "F"
+        }
+        document.write("Your grade is : " + result + " " + finalPercentage)
+    </script>
+</body>
+</html>

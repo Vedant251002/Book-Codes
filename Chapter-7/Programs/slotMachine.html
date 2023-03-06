@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p><b>It's your money slots.</b></p>
+    <input type="text" id="firstName" readonly="true" />
+    <input type="text" id="secondName" readonly="true" />
+    <input type="text" id="thirdName" readonly="true" value="" /><br />
+
+    <input
+      type="button"
+      id="playbtn"
+      value="Play Slots"
+      onclick="btnValues()"
+    /><br/>
+    <input type="text" id="result" />
+    <script>
+      let arrayOfNames = ["CHERRY", "LEMON", "ORANGE", "LIME", "BANANA"];
+
+      function btnValues() {
+        let random1 = Math.floor(Math.random() * 5);
+        let random2 = Math.floor(Math.random() * 5);
+        let random3 = Math.floor(Math.random() * 5);
+        let value1 = arrayOfNames[random1];
+        let value2 = arrayOfNames[random2];
+        let value3 = arrayOfNames[random3];
+        document.getElementById("firstName").value = value1;
+        document.getElementById("secondName").value = value2;
+        document.getElementById("thirdName").value = value3;
+        if (value1 == value2 && value1 == value3) {
+          document.getElementById("result").value = "All values are same";
+        } else if (value1 == value2 || value1 == value3 || value2 == value3) {
+          document.getElementById("result").value = "Any two values are same";
+        } else {
+          document.getElementById("result").value = "All values are different";
+        }
+      }
+    </script>
+  </body>
+</html>

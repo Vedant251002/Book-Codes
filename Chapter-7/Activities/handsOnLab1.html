@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let satScore = parseInt(prompt("Enter SAT score : "))
+            let alumnusStatus = confirm("If any parent is alumnus then press \"Ok\" " )
+            let income = parseInt(prompt("Enter family income : $"))
+
+            if( satScore >=1400 || ( satScore >= 1200 && alumnusStatus ) || ( satScore >= 1200 && income >= 100000)){
+                document.write("Student is accepted <br/>")
+                if( income < 100000){
+                    document.write("Student is granted for scholarship")
+                }
+            }
+    </script>
+</body>
+</html>

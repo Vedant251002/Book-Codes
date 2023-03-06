@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const DISC_PRICE = 4.98;
+        const BOOM_PRICE = 3.98;
+        const REG_SHIP = 5.00;
+        let shippingCost = 0;
+        let numDiscs = parseInt(prompt("ENter number of discs : "))
+        let numBooms  = parseInt(prompt("Enter number of boomerangs : "))
+
+        let totalPurchase = ( numBooms * BOOM_PRICE) + ( numDiscs * DISC_PRICE)
+
+        if(( numDiscs >=1 && numBooms >=1) || ( numDiscs >= 3 || numBooms >= 3)){
+            shippingCost = 0;
+        }else{
+            shippingCost = REG_SHIP;
+        }
+
+        let totalOrder = totalPurchase + shippingCost;
+
+        document.write("Total purchase : " + totalPurchase.toFixed(2) + "<br/>")
+        document.write("Shipping cost : " + shippingCost.toFixed(2) + "<br/>")
+        document.write("Total order : " + totalOrder.toFixed(2) + "<br/>")
+    </script>
+</body>
+</html>
