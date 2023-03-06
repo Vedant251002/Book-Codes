@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function avgScores (number) {
+            let total = 0
+            for(let i = 1 ; i <= number ; i++){
+                let value = parseInt(prompt("Enter values : "));
+                total += value;
+
+            }
+            return total / number;
+
+        }
+        let hwScores = parseInt(prompt("Enter Home work scores"))
+        document.write("average homewrok scores : " + avgScores(hwScores) + "<br/>")
+
+        let quizScores = parseInt(prompt("Enter Home work scores"))
+        document.write("average quiz scores : " + avgScores(quizScores)  + "<br/>")
+    </script>
+</body>
+</html>
