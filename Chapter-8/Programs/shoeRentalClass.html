@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class ShoeRental{
+            constructor(){
+                this.shoeID = prompt("Enter shoe Id : ")
+                this.shoeSize = prompt("Enter Shoe size : ")
+                this.fname = prompt("Enter firstname : ")
+                this.lname = prompt("Enter last name : ")
+                this.date = prompt("Enter date(DD/MM/YYYY)")
+                this.time = prompt("Enter time (HH:MM): ")
+                this.numGames = parseInt(prompt("how many games is renter bowling"))    
+                this.rentalCost = this.computeRentalCost(this.numGames)
+            }
+            computeRentalCost(games){
+                this.games = games
+                this.cost = this.games * 2;
+                return this.cost
+            }
+
+            displayInfo(){
+                document.write("Shoe ID : " + this.shoeID + "<br/>")
+                document.write("Shoe size : " + this.shoeSize  + "<br/>")
+                document.write("Shoe renter name : " + this.fname + " " + this.lname  + "<br/>")
+                document.write("Rental cost : " + this.rentalCost  + "<br/>")
+            }
+        }
+
+        let customer = new ShoeRental();
+        customer.displayInfo();
+    </script>
+</body>
+</html>

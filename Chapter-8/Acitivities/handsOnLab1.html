@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Operations{
+            constructor( value1 ,value2){
+                this.num1 = value1
+                this.num2 = value2
+            }
+             addition( ){
+                return this.num1 + this.num2;
+            }
+             multiplication(  ){
+                return this.num1 * this.num2;
+            }
+             division( ){
+                return this.num1 / this.num2;
+            }
+             mod( ){
+                return this.num1 % this.num2;
+            }
+        }
+
+        let op1 = new Operations( 52 , 15);
+        document.write("Addition : " + op1.addition() + "<br/>")
+        document.write("Multiplication : " + op1.multiplication() + "<br/>")
+        document.write("Division : " + op1.division().toFixed(2) + "<br/>")
+        document.write("Modulus : " + op1.mod() + "<br/>")
+
+    </script>
+</body>
+</html>
