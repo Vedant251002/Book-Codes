@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let totalBalance = 0.0;
+
+      function deposit(currentBalance) {
+        let tranAmt = parseFloat(prompt("Enter value you wanna deposit"));
+        currentBalance += tranAmt;
+        document.write("current balance : " + currentBalance + "<br/>");
+        return currentBalance;
+      }
+      function withDraw(currentBalance) {
+        let tranAmt = parseFloat(prompt("Enter value you wanna withdraw"));
+        currentBalance -= tranAmt;
+        document.write("current balance : " + currentBalance + "<br/>");
+        return currentBalance;
+      }
+      function inquire() {
+        document.write("current balance is : " + totalBalance);
+    }
+    let choice;
+    do{
+            choice = prompt(
+             "Enter d for deposit , w for withdraw , i for inquiry , x to exit"
+           );
+        if (choice == "d") {
+          totalBalance = deposit(totalBalance);
+        } else if (choice == "w") {
+          totalBalance = withDraw(totalBalance);
+        } else if (choice == "i") {
+          inquire();
+        
+        } else if (choice != "x") {
+            alert("Choose valid character from  d , w , i , x ")
+        }
+      }while (choice != "x");
+    </script>
+  </body>
+</html>

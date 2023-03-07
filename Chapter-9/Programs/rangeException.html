@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function rangeException(){
+            try{
+                let input = parseInt(prompt("Enter number"))
+                if (input < 1){
+                    throw("low")
+                }else if( input > 100 ){
+                    throw("high")
+                }else{
+                    alert("Number is in the correct range")
+                }
+            }
+            catch(ex){
+                if( ex == "low"){
+                    alert("too low")
+                }else if( ex == "high"){
+                    alert("too high")
+                }
+            }
+        }
+        let more = "y"
+        while(more == "y"){
+            rangeException();
+            more = prompt("want to compare more number then press y")
+        }
+
+    </script>
+</body>
+</html>
