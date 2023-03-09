@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let menuChoice;
+        let subMenuChoice;
+        do{
+            menuChoice = prompt("enter c for customer service menu , o for order , q to quit ")
+            if( menuChoice == "c"){
+                customerServiceMenu();
+            }else if( menuChoice == "o"){
+                orderProcessingMenu();
+            }else if( menuChoice != "q"){
+                alert("invalid input")
+            }
+        }while( menuChoice != "q")
+        
+        function customerServiceMenu(){
+            do{
+                subMenuChoice = prompt("Enter a to add a new custome , c to change customer info , d to delete , q to quit")
+
+                if( subMenuChoice == "a"){
+                    addCustomer();
+                }else if( subMenuChoice == "c"){
+                    changeCustomer();
+                }else if( subMenuChoice == "d"){
+                    deleteCustomer()
+                }
+                else if( subMenuChoice != "q"){
+                    alert("invalid input")
+                }
+            }while( subMenuChoice != "q")
+        }
+
+        function orderProcessingMenu(){
+            do{
+                subMenuChoice = prompt("enter p for placing an order , i for invoicing , s for shipping , q to quit")
+                if( subMenuChoice == "p"){
+                    placeOrder();
+                }else if( subMenuChoice ==  "i"){
+                    invoiceOrder();
+                }else if( subMenuChoice == "s"){
+                    shipOrder();
+                }else if( subMenuChoice != "q"){
+                    alert("invalid input")
+                }
+            }while( subMenuChoice != "q");
+        }
+
+        function addCustomer(){
+            alert("in add customer func")
+        }
+        function changeCustomer(){
+            alert("in change customer func")
+        }
+        function deleteCustomer(){
+            alert("in delete func")
+        }
+        function placeOrder(){
+            alert("in place order func")
+        }
+        function invoiceOrder(){
+            alert("in invoice order func")
+        }
+        function shipOrder(){
+            alert("in ship order func")
+        }
+    </script>
+</body>
+</html>

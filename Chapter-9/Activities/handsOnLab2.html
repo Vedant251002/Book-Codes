@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let input;
+        do{
+            input = prompt('Enter c to count words in sentence , s to spell a sentence in backward , x to exit');
+            if( input == "c"){
+                countWords();
+                
+            }else if( input == "s"){
+                reverseSentence()
+            }else if( input != "x"){
+                alert("Enter valid input")
+                
+            }
+        }while( input != "x");
+
+        function countWords (){
+            let sentence = prompt("Enter sentence")
+            let words = sentence.split(" ")
+            document.write("Count of string :" + words.length + "<br/>")
+            
+        }
+        function reverseSentence (){
+            let sentence = prompt("Enter sentence")
+            let words = sentence.split(" ")
+            let reverseOrder = words.reverse();
+            document.write("reverse order : " + reverseOrder.join(" ") + "<br/>")
+            
+        }
+
+    </script>
+</body>
+</html>

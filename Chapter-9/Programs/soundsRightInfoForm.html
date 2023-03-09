@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Enter Name , Address , Email id</h1>
+    <form onsubmit="submitForm()">
+      <label>First Name : </label><input type="text" id="fname" /><br />
+      <label for="">Last Name : </label><input type="text" id="lname" /><br />
+      <label>Street Address : </label><input type="text" id="address" /><br />
+      <label>Zip (6-digit) : </label><input type="number" id="zip" /><br />
+      <label>Email id : </label><input type="text" id="mail" /><br />
+      <button>Submit</button>
+    </form>
+    <p id="demo"></p>
+    <script>
+      let fname = document.getElementById("fname");
+      let lname = document.getElementById("lname");
+      let address = document.getElementById("address");
+      let zip = document.getElementById("zip");
+      let mail = document.getElementById("mail");
+
+      function submitForm() {
+        event.preventDefault();
+        console.log();
+        try {
+          if (fname.value.length == 0) {
+            throw "fname blank";
+          }
+          if (lname.value.length == 0) {
+            throw "lname blank";
+          }
+          if (address.value.length == 0) {
+            throw "address blank";
+          }
+          if (zip.value.length != 6) {
+            throw "zip invalid";
+          }
+          if (mail.value.length == 0) {
+            throw "mail blank";
+          }
+        } catch (ex) {
+          if (ex == "fname blank") {
+            alert("Enter first name")
+          }
+          if (ex == "lname blank") {
+            alert("Enter last name")
+          }
+          if (ex == "address blank") {
+            alert("Enter address")
+          }
+          if (ex == "zip invalid") {
+            alert("zip is invalid")
+          }
+          if (ex == "mail blank") {
+            alert("Enter mail")
+          }
+        }
+        document.getElementById("demo").innerHTML = `Name : ${fname.value} ${lname.value} <br/>
+        Address : ${address.value}  <br/>
+        zip : ${zip.value} <br/>
+        mail : ${mail.value} <br/>`;
+      }
+    </script>
+  </body>
+</html>

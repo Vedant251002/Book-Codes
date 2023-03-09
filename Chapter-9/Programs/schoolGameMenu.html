@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let menuChoice;
+      function displayMenu() {
+        menuChoice = prompt(
+          "Enter a to play arithmetic games , g to play geography , x to exit "
+        );
+        return menuChoice;
+      }
+      function arithmeticMenu() {
+        let choice = prompt(
+          "enter a for addition , s for subtraction ,  x to exit"
+        );
+        do {
+          if (choice == "a") {
+            let int1 = Math.floor(Math.random() * 100) + 1;
+            let int2 = Math.floor(Math.random() * 100) + 1;
+            let userInput = parseInt(
+              prompt(`Enter addition of ${int1} and ${int2}`)
+            );
+            if (int1 + int2 == userInput) {
+              alert("ans is correct");
+            } else {
+              alert(`sorry you were wrong, correct ans is ${int1 + int2}`);
+            }
+            break;
+          } else if (choice == "s") {
+            let int1 = Math.floor(Math.random() * 100) + 1;
+            let int2 = Math.floor(Math.random() * 100) + 1;
+            let userInput = parseInt(
+              prompt(`Enter subtraction of ${int1} and ${int2}`)
+            );
+            if (int1 - int2 == userInput) {
+              alert("ans is correct");
+            } else {
+              alert(`sorry you were wrong, correct ans is ${int1 - int2}`);
+            }
+          }
+          break;
+        } while (choice != "x");
+      }
+      function geographyMenu() {
+        let choice = prompt(
+          "Enter g to play guess the country ,  n to guess the captial , x to exit"
+        );
+        do {
+          if (choice == "g") {
+            guessCountry();
+            break
+          } else if (choice == "n") {
+            guessCapital();
+            break
+          } else if (choice != "x") {
+            alert("invalid input");
+          }
+        } while (choice != "x");
+      }
+      function guessCountry() {
+        let randomNum = Math.floor(Math.random() * 5) + 1;
+        let city = "";
+        let rightAns = "";
+        switch (randomNum) {
+          case 1:
+            city = "Hamburg";
+            rightAns = "germany";
+            break;
+          case 2:
+            city = "Osaka";
+            rightAns = "japan";
+            break;
+          case 3:
+            city = "Liverpool";
+            rightAns = "england";
+            break;
+          case 4:
+            city = "Delhi";
+            rightAns = "India";
+            break;
+          case 5:
+            city = "Mombasa";
+            rightAns = "kenya";
+            break;
+        }
+        let inputCountry = prompt(`Enter country name of ${city} `);
+        if (rightAns == inputCountry) {
+          alert("you are right");
+        } else {
+          alert(`no you were wrong ,right ans is ${rightAns}`);
+        }
+      }
+      function guessCapital(){
+        let randomNum = Math.floor(Math.random() * 5) + 1;
+        let country = "";
+        let rightCap = "";
+        switch (randomNum) {
+          case 1:
+          country = "Afghanistan";
+          rightCap = "kabul";
+            break;
+          case 2:
+          country = "asutria";
+          rightCap = "vienna";
+            break;
+          case 3:
+          country = "canada";
+          rightCap = "ottawa";
+            break;
+          case 4:
+          country = "india";
+          rightCap = "delhi";
+            break;
+          case 5:
+          country = "portugal";
+          rightCap = "lisbon";
+            break;
+        }
+        let inputCap = prompt(`Enter country name of ${country} `);
+        if (rightCap == inputCap) {
+          alert("you are right");
+        } else {
+          alert(`no you were wrong ,right ans is ${rightCap}`);
+        }
+      }
+      do {
+        let menuChoice = displayMenu();
+
+        if (menuChoice == "a") {
+          arithmeticMenu();
+        } else if (menuChoice == "g") {
+          geographyMenu();
+        } else if (menuChoice != "x") {
+          alert("invalid input");
+        }
+      } while (menuChoice != "x");
+    </script>
+  </body>
+</html>
