@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Welcome to red eye airline</h1>
+    <form onsubmit="submitForm()">
+      <label>Select Starting city : </label><br />
+      <select id="startCity">
+        <option>ATLANTA</option>
+        <option>CLEVELAND</option></select
+      ><br /><br />
+      <label>Select destination city : </label><br />
+      <select id="endCity">
+        <option>ATLANTA</option>
+        <option>CLEVELAND</option>
+        <option>INDIANAPOLIS</option>
+        <option>LOUISVILLE</option>
+        <option>MEMPHIS</option></select
+      ><br />
+      <button>Submit</button><br /><br />
+      <textarea id="output" readonly="true" rows="10" cols="60"></textarea>
+    </form>
+    <script>
+      let allData = {
+        ATLANTA: [
+          {
+            destination: "CLEVELAND",
+            flightNum: "RE103",
+            price: "110.00",
+          },
+          {
+            destination: "INDIANAPOLIS",
+            flightNum: "RE105",
+            price: "100.00",
+          },
+          {
+            destination: "LOUISVILLE",
+            flightNum: "RE107",
+            price: "90.00",
+          },
+          {
+            destination: "MEMPHIS",
+            flightNum: "RE109",
+            price: "80.00",
+          },
+        ],
+
+        CLEVELAND: [
+          {
+            destination: "INDIANAPOLIS",
+            flightNum: "RE305",
+            price: "75.00",
+          },
+          {
+            destination: "LOUISVILLE",
+            flightNum: "RE307",
+            price: "90.00",
+          },
+          {
+            destination: "MEMPHIS",
+            flightNum: "RE309",
+            price: "110.00",
+          },
+          {
+            destination: "ATLANTA",
+            flightNum: "RE301",
+            price: "120.00",
+          },
+        ],
+      };
+
+      function submitForm() {
+        event.preventDefault();
+        let startingCity = document.getElementById("startCity").value;
+        let endingCity = document.getElementById("endCity").value;
+        let outputValue = document.getElementById("output");
+
+        if (startingCity == endingCity) {
+          alert("Both city are same");
+        } else {
+          let obj = searchObj(startingCity, endingCity);
+          outputValue.value = `Starting  city : ${startingCity}
+            
+Destination city : ${obj[0].destination}
+
+Flight number : ${obj[0].flightNum}
+
+Price per person : ${obj[0].price}`;
+        }
+      }
+      function searchObj(startCity, desCity) {
+        let demo2 = allData[startCity];
+
+        let demo = demo2.filter((i) => {
+          if (desCity == i.destination) {
+            return i;
+          }
+        });
+        return demo;
+      }
+    </script>
+  </body>
+</html>

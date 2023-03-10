@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array = [];
+        let numComparison = 0;
+        for(let i = 0 ; i < 5000000 ; i++){
+            array[i] = i+1;
+        }   
+
+        let searchNumber = parseInt(prompt("search a number between 1 to 50000"))
+        let d1 = new Date();
+        let found =  false;
+        let index = 0;
+        while( index < array.length-1 && (!found)){
+            numComparison++
+            if( array[index] == searchNumber){
+                let d2 = new Date();
+                found = true;
+                document.write("Difference of time by sequence method : " + (d2 - d1) + "<br/>")
+            }
+            index++
+        }
+        let found2 = false
+        let low = 0
+        let high = array.length-1;
+        let index2 = Math.floor((low + high ) / 2)
+        let d3 = new Date();
+        while( low <= high && (!found2)){
+            if( array[index2]  == searchNumber){
+                found2 =true
+                let d4 = new Date()
+                document.write("Difference of time by binary search method : " + (d4 - d3)  + "<br/>")
+            }
+            else{
+                if( array[index2] > searchNumber){
+                    high = index2 - 1
+                }else{
+                    low = index2 + 1;
+                }
+                index2 = Math.floor((low + high ) / 2)
+            }
+        }
+    </script>
+</body>
+</html>
