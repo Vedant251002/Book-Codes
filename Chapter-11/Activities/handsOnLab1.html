@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p id="demo"></p>
+    <script>
+        let charPattern = prompt("Enter character you want to print")
+        let numRows = parseInt(prompt("Enter rows"))
+        let numCols = parseInt(prompt("enter columns"));
+        let output = ""
+        for( let i = 1 ; i <= numRows ; i++ ){
+            if( i == 1 || i== numRows){
+                for(let y = 1 ; y <= numCols ; y++){
+                    output += charPattern + "&nbsp;"
+                }
+            }
+            else{
+            for(let y = 1 ; y <= numCols ; y++){
+                if( y == 1 || y == numCols){
+                    output += charPattern + "&nbsp;"
+                }else{
+                    output += "&nbsp;"
+                }
+            }}
+            output += "<br/>"
+        }
+        document.getElementById("demo").innerHTML = output;
+    </script>
+</body>
+</html>

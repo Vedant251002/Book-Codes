@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label>Last Name : </label>
+      <input type="text" id="lnameForm" readonly="true" /><br />
+      <label>First Name : </label>
+      <input type="text" id="fnameForm" readonly="true" /><br />
+      <label>City : </label>
+      <input type="text" id="cityForm" readonly="true" /><br />
+      <label>state : </label>
+      <input type="text" id="stateForm" readonly="true" /><br />
+      <label>Record : </label
+      ><input type="number" id="gotoRecord" value="0" /><input
+        type="button"
+        value="Go To"
+        onclick="gotoRecordForm()"
+      /><br />
+      <button onclick="firstRecord()">First</button>
+      <button onclick="previousRecord()">Previous</button>
+      <button onclick="nextRecord()">Next</button>
+      <button onclick="lastRecord()">Last</button><br />
+      <label>Current Record : </label>
+      <input type="number" id="crntRecord" readonly="true" />
+    </form>
+    <script>
+      let allData = [
+        {
+          lname: "Ghava",
+          fname: "Utsav",
+          city: "bhavnagar",
+          state: "gujarat",
+        },
+        {
+          lname: "Patel",
+          fname: "Rajan",
+          city: "kutch",
+          state: "gujarat",
+        },
+        {
+          lname: "Shah",
+          fname: "Bhavin",
+          city: "Somnath",
+          state: "gujarat",
+        },
+        {
+          lname: "Pandya",
+          fname: "Vedant",
+          city: "Ahmedabad",
+          state: "gujarat",
+        },
+        {
+          lname: "Mehta",
+          fname: "Aditya",
+          city: "bihar",
+          state: "UP",
+        },
+      ];
+      let count = 0;
+      let lnameForm = document.getElementById("lnameForm");
+      let fnameForm = document.getElementById("fnameForm");
+      let cityForm = document.getElementById("cityForm");
+      let stateForm = document.getElementById("stateForm");
+      function loadData() {
+        let obj = allData[count];
+        lnameForm.value = obj.lname;
+        fnameForm.value = obj.fname;
+        cityForm.value = obj.city;
+        stateForm.value = obj.state;
+
+        document.getElementById("crntRecord").value = count;
+      }
+      loadData();
+      function gotoRecordForm() {
+        let recordNumber = document.getElementById("gotoRecord").value;
+        if (recordNumber >= allData.length - 1) {
+          alert("no such data found");
+        } else if (recordNumber < 0) {
+          alert("enter positive number");
+        } else {
+          count = recordNumber;
+          loadData();
+        }
+      }
+      function firstRecord() {
+        event.preventDefault();
+        count = 0;
+        loadData();
+      }
+      function lastRecord() {
+        event.preventDefault();
+        count = allData.length - 1;
+        loadData();
+      }
+      function previousRecord() {
+        event.preventDefault();
+        if (count == 0) {
+          alert("You are on 1st record already");
+        } else {
+          count -= 1;
+          loadData();
+        }
+      }
+      function nextRecord() {
+        event.preventDefault();
+        if (count == allData.length - 1) {
+          alert("You are on last record already");
+        } else {
+          count += 1;
+          loadData();
+        }
+      }
+    </script>
+  </body>
+</html>

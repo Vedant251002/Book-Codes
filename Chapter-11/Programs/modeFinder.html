@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let numOfInputs = parseInt(prompt("How many numbers you want to enter"));
+      let mainArray = [];
+      for (let i = 1; i <= numOfInputs; i++) {
+        let values = parseInt(prompt("enter values"));
+        mainArray.push(values);
+      }
+      let count = 0;
+      let value = "";
+
+      for (let i = 0; i <= mainArray.length - 1; i++) {
+        let count2 = 0;
+        for (let y = 0; y <= mainArray.length - 1; y++) {
+          if (mainArray[i] == mainArray[y]) {
+            count2++;
+          }
+        }
+        if (count2 >= count) {
+          count = count2;
+          value = mainArray[i];
+        }
+      }
+      document.write("Mode is : " + value + "<br/>");
+      document.write("Number of times occuring : " + count + "<br/>");
+    </script>
+  </body>
+</html>
